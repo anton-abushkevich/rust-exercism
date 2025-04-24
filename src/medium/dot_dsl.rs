@@ -1,65 +1,104 @@
-pub mod graph {
-    use crate::medium::_dot_dsl::graph::graph_items::attr::Attr;
-    use crate::medium::_dot_dsl::graph::graph_items::edge::Edge;
-    use crate::medium::_dot_dsl::graph::graph_items::node::Node;
-
-    pub mod graph_items {
-        pub mod edge {
-            pub struct Edge<'a>;
-
-            impl Edge<'_> {
-                pub fn new() -> Self {
-                    Self {}
-                }
-            }
+macro_rules! support_attrs {
+    () => {
+        pub fn with_attrs(mut self, attrs: &[(&str, &str)]) -> Self {
+            self.attrs = attrs
+                .iter()
+                .map(|(k, v)| (k.to_string(), v.to_string()))
+                .collect();
+            self
         }
-
-        pub mod node {
-            use std::collections::HashMap;
-
-            pub struct Node<'a> {
-                name: &'a str,
-                attrs: HashMap<&'a str, &'a str>
-            }
-
-            impl Node {
-                pub fn new(name: &str) -> Self {
-                    Self {
-                        name,
-                        attrs: HashMap::new()
-                    }
-                }
-            }
+        
+        pub fn attr(&self, key: &str) -> Option<&str> {
+            self.attrs.get(key).map(|s| s.as_str())
         }
+    };
+}
 
-        pub mod attr {
-            pub struct Attr<'a>;
+pub mod graph {    
+    use std::collections::HashMap;
+    use graph_items::edge::Edge;
+    use graph_items::node::Node;
 
-            impl Attr {
-                pub fn new() -> Self {
-                    Self {}
-                }
-            }
-        }
-    }
-
-    pub struct Graph<'a> {
-        pub edges: Vec<Edge<'a>>,
-        pub nodes: Vec<Node<'a>>,
-        pub attrs: Vec<Attr<'a>>,
+    #[derive(Debug, PartialEq, Default)]
+    pub struct Graph {
+        pub nodes: Vec<Node>,
+        pub edges: Vec<Edge>,
+        pub attrs: HashMap<String, String>,
     }
 
     impl Graph {
         pub fn new() -> Self {
-            todo!("Construct a new Graph struct.");
+            Self::default()
+        }
+        
+        pub fn with_nodes(mut self, nodes: &[Node]) -> Self {
+            self.nodes = nodes.to_vec();
+            self
+        }
+        
+        pub fn with_edges(mut self, edges: &[Edge]) -> Self {
+            self.edges = edges.to_vec();
+            self
+        }
+        
+        pub fn node(&self, name: &str) -> Option<&Node> {
+            self.nodes.iter().find(|n| { n.name == name })
+        }
+
+        support_attrs!();
+    }
+
+    pub mod graph_items {
+        pub mod node {
+            use super::super::*;
+
+            #[derive(Debug, PartialEq, Clone)]
+            pub struct Node {
+                pub name: String,
+                pub attrs: HashMap<String, String>,
+            }
+            
+            impl Node {
+                pub fn new(name: &str) -> Self {
+                    Self {
+                        name: name.to_string(),
+                        attrs: HashMap::new()
+                    }
+                }
+
+                support_attrs!();
+            }
+        }
+
+        pub mod edge {
+            use super::super::*;
+
+            #[derive(Debug, PartialEq, Clone)]
+            pub struct Edge {
+                pub from: String,
+                pub to: String,
+                pub attrs: HashMap<String, String>,
+            }
+
+            impl Edge {
+                pub fn new(from: &str, to: &str) -> Self {
+                    Self {
+                        from: from.to_string(),
+                        to: to.to_string(),
+                        attrs: HashMap::new()
+                    }
+                }
+
+                support_attrs!();
+            }
         }
     }
 }
 
 #[cfg(test)]
 mod tests {
-    //use std::collections::HashMap;
-    //use super::graph::graph_items::edge::Edge;
+    use std::collections::HashMap;
+    use super::graph::graph_items::edge::Edge;
     use super::graph::graph_items::node::Node;
     use super::graph::Graph;
 
@@ -80,7 +119,7 @@ mod tests {
         assert_eq!(graph.nodes, vec![Node::new("a")]);
     }
 
-/*    #[test]
+    #[test]
     fn graph_with_one_node_with_keywords() {
         let nodes = vec![Node::new("a").with_attrs(&[("color", "green")])];
         let graph = Graph::new().with_nodes(&nodes);
@@ -90,18 +129,18 @@ mod tests {
             graph.nodes,
             vec![Node::new("a").with_attrs(&[("color", "green")])]
         );
-    }*/
+    }
 
-/*    #[test]
+    #[test]
     fn graph_with_one_edge() {
         let edges = vec![Edge::new("a", "b")];
         let graph = Graph::new().with_edges(&edges);
         assert!(graph.nodes.is_empty());
         assert!(graph.attrs.is_empty());
         assert_eq!(graph.edges, vec![Edge::new("a", "b")]);
-    }*/
+    }
 
-/*    #[test]
+    #[test]
     fn graph_with_one_edge_with_keywords() {
         let edges = vec![Edge::new("a", "b").with_attrs(&[("color", "blue")])];
         let graph = Graph::new().with_edges(&edges);
@@ -111,9 +150,9 @@ mod tests {
             graph.edges,
             vec![Edge::new("a", "b").with_attrs(&[("color", "blue")])]
         );
-    }*/
+    }
 
-/*    #[test]
+    #[test]
     fn graph_with_one_attribute() {
         let graph = Graph::new().with_attrs(&[("foo", "1")]);
         #[allow(clippy::useless_conversion, reason = "allow String and &str")]
@@ -121,9 +160,9 @@ mod tests {
         assert!(graph.nodes.is_empty());
         assert!(graph.edges.is_empty());
         assert_eq!(graph.attrs, expected_attrs);
-    }*/
+    }
 
-/*    #[test]
+    #[test]
     fn graph_with_attributes() {
         let nodes = vec![
             Node::new("a").with_attrs(&[("color", "green")]),
@@ -161,9 +200,9 @@ mod tests {
             ]
         );
         assert_eq!(graph.attrs, expected_attrs);
-    }*/
+    }
 
-/*    #[test]
+    #[test]
     fn edges_store_attributes() {
         let nodes = vec![
             Node::new("a").with_attrs(&[("color", "green")]),
@@ -192,9 +231,9 @@ mod tests {
         assert_eq!(graph.edges[0].attr("color"), None);
         assert_eq!(graph.edges[0].attr("fill"), None);
         assert_eq!(graph.edges[0].attr("foo"), None);
-    }*/
+    }
 
-/*    #[test]
+    #[test]
     fn graph_nodes_store_attributes() {
         let attributes = [("foo", "bar"), ("bat", "baz"), ("bim", "bef")];
         let graph = Graph::new().with_nodes(
@@ -216,5 +255,5 @@ mod tests {
         assert_eq!(c.attr("foo"), None);
         assert_eq!(c.attr("bat"), None);
         assert_eq!(c.attr("bim"), Some("bef"));
-    }*/
+    }
 }
