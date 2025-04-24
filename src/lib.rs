@@ -18,6 +18,7 @@ pub mod easy {
     pub mod squares_diff;
     pub mod str_reverse;
     pub mod sum_of_multiples;
+    pub mod etl;
 }
 
 pub mod medium {
