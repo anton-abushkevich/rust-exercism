@@ -39,4 +39,5 @@ pub mod medium {
     pub mod grade_school;
     pub mod hamming;
     pub mod isbn_verifier;
+    pub mod isogram;
 }
