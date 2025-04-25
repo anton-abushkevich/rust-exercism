@@ -36,5 +36,6 @@ pub mod medium {
     pub mod bowling;
     pub mod bowling2;
     pub mod dot_dsl;
+    pub mod grade_school;
 }
 
