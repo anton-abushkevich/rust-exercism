@@ -40,4 +40,5 @@ pub mod medium {
     pub mod hamming;
     pub mod isbn_verifier;
     pub mod isogram;
+    pub mod nucleotide_count;
 }
