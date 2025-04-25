@@ -1,12 +1,8 @@
 /// Return the Hamming distance between the strings,
 /// or None if the lengths are mismatched.
 pub fn hamming_distance(s1: &str, s2: &str) -> Option<usize> {
-    (s1.len() == s2.len()).then(|| {
-        s1.chars()
-            .zip(s2.chars())
-            .filter(|(c1, c2)| c1 != c2)
-            .count()
-    })
+    (s1.len() == s2.len())
+        .then_some(s1.chars().zip(s2.chars()).filter(|(a, b)| a != b).count())
 }
 
 pub fn _hamming_distance(s1: &str, s2: &str) -> Option<usize> {
