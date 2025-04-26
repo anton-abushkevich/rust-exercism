@@ -41,4 +41,5 @@ pub mod medium {
     pub mod isbn_verifier;
     pub mod isogram;
     pub mod nucleotide_count;
+    pub mod paas_io;
 }
