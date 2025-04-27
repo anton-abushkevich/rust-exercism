@@ -44,4 +44,5 @@ pub mod medium {
     pub mod paas_io;
     pub mod palindrome_products;
     pub mod pangram;
+    pub mod pascals_triangle;
 }
