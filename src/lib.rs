@@ -42,4 +42,5 @@ pub mod medium {
     pub mod isogram;
     pub mod nucleotide_count;
     pub mod paas_io;
+    pub mod palindrome_products;
 }
