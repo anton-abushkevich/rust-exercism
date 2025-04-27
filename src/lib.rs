@@ -46,4 +46,5 @@ pub mod medium {
     pub mod pangram;
     pub mod pascals_triangle;
     pub mod perfect_numbers;
+    pub mod pig_latin;
 }
