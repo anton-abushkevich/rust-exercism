@@ -45,4 +45,5 @@ pub mod medium {
     pub mod palindrome_products;
     pub mod pangram;
     pub mod pascals_triangle;
+    pub mod perfect_numbers;
 }
