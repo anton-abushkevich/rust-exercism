@@ -48,4 +48,6 @@ pub mod medium {
     pub mod perfect_numbers;
     pub mod pig_latin;
     pub mod queen_attack;
+    pub mod rna_transcription;
+    pub mod rna_transcription2;
 }
