@@ -47,4 +47,5 @@ pub mod medium {
     pub mod pascals_triangle;
     pub mod perfect_numbers;
     pub mod pig_latin;
+    pub mod queen_attack;
 }
