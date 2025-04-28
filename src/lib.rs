@@ -50,4 +50,5 @@ pub mod medium {
     pub mod queen_attack;
     pub mod rna_transcription;
     pub mod rna_transcription2;
+    pub mod run_length_encoding;
 }
