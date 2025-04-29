@@ -51,4 +51,5 @@ pub mod medium {
     pub mod rna_transcription;
     pub mod rna_transcription2;
     pub mod run_length_encoding;
+    pub mod saddle_points;
 }
