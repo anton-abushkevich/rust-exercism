@@ -55,4 +55,5 @@ pub mod medium {
     pub mod say;
     pub mod scrabble_score;
     pub mod sieve;
+    pub mod simple_linked_list;
 }
