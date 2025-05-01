@@ -63,4 +63,6 @@ pub mod medium {
     pub mod two_bucket;
     pub mod variable_length_quantity;
     pub mod robot_simulator;
+    pub mod robot_name;
+    pub mod robot_name2;
 }
