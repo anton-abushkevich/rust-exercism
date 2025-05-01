@@ -61,4 +61,5 @@ pub mod medium {
     pub mod tournament;
     pub mod triangle;
     pub mod two_bucket;
+    pub mod variable_length_quantity;
 }
