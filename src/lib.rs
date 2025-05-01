@@ -58,4 +58,5 @@ pub mod medium {
     pub mod simple_linked_list;
     pub mod spiral_matrix;
     pub mod spiral_matrix2;
+    pub mod tournament;
 }
