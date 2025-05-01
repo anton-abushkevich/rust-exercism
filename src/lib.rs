@@ -62,4 +62,5 @@ pub mod medium {
     pub mod triangle;
     pub mod two_bucket;
     pub mod variable_length_quantity;
+    pub mod robot_simulator;
 }
