@@ -65,4 +65,5 @@ pub mod medium {
     pub mod robot_simulator;
     pub mod robot_name;
     pub mod robot_name2;
+    pub mod protein_translation;
 }
