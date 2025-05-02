@@ -68,4 +68,5 @@ pub mod medium {
     pub mod protein_translation;
     pub mod wordy;
     pub mod custom_set;
+    pub mod accumulate;
 }
