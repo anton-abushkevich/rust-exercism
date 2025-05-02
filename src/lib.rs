@@ -71,4 +71,5 @@ pub mod medium {
     pub mod accumulate;
     pub mod affine_cipher;
     pub mod affine_cipher2;
+    pub mod atbash_cipher;
 }
