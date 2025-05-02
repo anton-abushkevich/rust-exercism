@@ -69,4 +69,6 @@ pub mod medium {
     pub mod wordy;
     pub mod custom_set;
     pub mod accumulate;
+    pub mod affine_cipher;
+    pub mod affine_cipher2;
 }
