@@ -50,7 +50,15 @@ mod tests {
     use super::*;
 
     #[test]
-    fn check() {
-        println!("{}", recite(10, 10));
+    fn first_generic_verse() {
+        assert_eq!(
+            recite(10, 1).trim(),
+            concat!(
+            "Ten green bottles hanging on the wall,\n",
+            "Ten green bottles hanging on the wall,\n",
+            "And if one green bottle should accidentally fall,\n",
+            "There'll be nine green bottles hanging on the wall.",
+            )
+        );
     }
 }
