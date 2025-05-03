@@ -74,4 +74,5 @@ pub mod medium {
     pub mod atbash_cipher;
     pub mod crypto_square;
     pub mod diamond;
+    pub mod largest_series_product;
 }
