@@ -75,4 +75,5 @@ pub mod medium {
     pub mod crypto_square;
     pub mod diamond;
     pub mod largest_series_product;
+    pub mod luhn_from;
 }
