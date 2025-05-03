@@ -76,4 +76,5 @@ pub mod medium {
     pub mod diamond;
     pub mod largest_series_product;
     pub mod luhn_from;
+    pub mod luhn_trait;
 }
