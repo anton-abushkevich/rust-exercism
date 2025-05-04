@@ -78,4 +78,5 @@ pub mod medium {
     pub mod luhn_from;
     pub mod luhn_trait;
     pub mod list_ops;
+    pub mod phone_number;
 }
