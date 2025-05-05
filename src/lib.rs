@@ -81,4 +81,5 @@ pub mod medium {
     pub mod phone_number;
     pub mod rail_fence_cipher;
     pub mod roman_numerals;
+    pub mod rotational_cipher;
 }
