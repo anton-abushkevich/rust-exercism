@@ -79,4 +79,5 @@ pub mod medium {
     pub mod luhn_trait;
     pub mod list_ops;
     pub mod phone_number;
+    pub mod rail_fence_cipher;
 }
