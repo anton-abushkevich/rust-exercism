@@ -83,4 +83,5 @@ pub mod medium {
     pub mod roman_numerals;
     pub mod rotational_cipher;
     pub mod simple_cipher;
+    pub mod word_count;
 }
