@@ -84,4 +84,5 @@ pub mod medium {
     pub mod rotational_cipher;
     pub mod simple_cipher;
     pub mod word_count;
+    pub mod secret_handshake;
 }
