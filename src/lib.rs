@@ -85,4 +85,5 @@ pub mod medium {
     pub mod simple_cipher;
     pub mod word_count;
     pub mod secret_handshake;
+    pub mod knapsack;
 }
