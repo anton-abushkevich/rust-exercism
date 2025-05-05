@@ -80,4 +80,5 @@ pub mod medium {
     pub mod list_ops;
     pub mod phone_number;
     pub mod rail_fence_cipher;
+    pub mod roman_numerals;
 }
