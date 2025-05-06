@@ -89,4 +89,5 @@ pub mod medium {
     pub mod yacht;
     pub mod matrix;
     pub mod fizzy;
+    pub mod pythagorean_triplet;
 }
