@@ -86,4 +86,5 @@ pub mod medium {
     pub mod word_count;
     pub mod secret_handshake;
     pub mod knapsack;
+    pub mod yacht;
 }
