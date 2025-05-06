@@ -87,4 +87,5 @@ pub mod medium {
     pub mod secret_handshake;
     pub mod knapsack;
     pub mod yacht;
+    pub mod matrix;
 }
