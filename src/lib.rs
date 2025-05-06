@@ -88,4 +88,5 @@ pub mod medium {
     pub mod knapsack;
     pub mod yacht;
     pub mod matrix;
+    pub mod fizzy;
 }
