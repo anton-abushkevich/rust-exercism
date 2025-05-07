@@ -90,4 +90,5 @@ pub mod medium {
     pub mod matrix;
     pub mod fizzy;
     pub mod pythagorean_triplet;
+    pub mod book_store;
 }
