@@ -99,4 +99,5 @@ pub mod hard {
     pub mod parallel_letter_frequency;
     pub mod parallel_letter_frequency2;
     pub mod macros;
+    pub mod poker;
 } 
