@@ -94,3 +94,8 @@ pub mod medium {
     pub mod decimal;
     pub mod grep;
 }
+
+pub mod hard {
+    pub mod parallel_letter_frequency;
+    pub mod parallel_letter_frequency2;
+} 
