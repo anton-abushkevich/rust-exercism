@@ -92,4 +92,5 @@ pub mod medium {
     pub mod pythagorean_triplet;
     pub mod book_store;
     pub mod decimal;
+    pub mod grep;
 }
