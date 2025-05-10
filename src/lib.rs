@@ -101,4 +101,5 @@ pub mod hard {
     pub mod macros;
     pub mod poker;
     pub mod forth;
+    pub mod ocr_numbers;    
 } 
