@@ -52,7 +52,8 @@ fn validate(input: &str) -> Result<Vec<&str>, Error> {
     Ok(lines)
 }
 
-mod r {
+#[cfg(test)]
+mod tests {
     use super::*;
 
     #[test]
