@@ -102,4 +102,5 @@ pub mod hard {
     pub mod poker;
     pub mod forth;
     pub mod ocr_numbers;    
+    pub mod react;    
 } 
