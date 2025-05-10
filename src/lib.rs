@@ -103,4 +103,5 @@ pub mod hard {
     pub mod forth;
     pub mod ocr_numbers;    
     pub mod react;    
+    pub mod circular_buffer;    
 } 
