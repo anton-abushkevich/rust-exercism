@@ -105,5 +105,6 @@ pub mod hard {
     pub mod react;    
     pub mod circular_buffer;    
     pub mod rectangles;    
-    pub mod xorcism;    
+    pub mod xorcism;
+    pub mod dominoes;
 } 
