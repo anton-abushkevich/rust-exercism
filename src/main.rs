@@ -1,5 +1,5 @@
 #[allow(unused_imports)]
-use testpr::{easy, medium, hard};
+use rust_exercism::{easy, medium, hard};
 
 fn main() {
     //println!("{:?}", medium::alphametics::solve("AGENT + SMITH == MENACE"));
