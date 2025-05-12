@@ -107,4 +107,5 @@ pub mod hard {
     pub mod rectangles;    
     pub mod xorcism;
     pub mod dominoes;
+    pub mod doubly_linked_list;
 } 
