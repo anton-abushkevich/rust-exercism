@@ -3,13 +3,13 @@ pub fn q_rsqrt(number: f32) -> f32 {
     let half = number * 0.5f32;
 
     // f32 -> u32
-    let i: u32 = unsafe { std::mem::transmute(number) };
+    let i: u32 = number.to_bits(); // or unsafe { std::mem::transmute(number) };
 
     // wtf-formula
     let j = 0x5f3759df - (i >> 1);
 
     // u32 -> f32
-    let y: f32 = unsafe { std::mem::transmute(j) };
+    let y: f32 = f32::from_bits(j); // or unsafe { std::mem::transmute(j) };
 
     // one iteration of the Newton's sqrt approximation method
     y * (1.5f32 - (half * y * y))
